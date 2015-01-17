@@ -33,7 +33,7 @@ public class SingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     // Call this to upgrade a singleton to a persistent singleton.
     // This is most often done in Awake().
     // This will kill an instance that tries to be a persistent singleton but isn't the current instance.
-    public void DontDestroyElseKill(SingletonBehaviour<T> mb)
+    public static void DontDestroyElseKill(SingletonBehaviour<T> mb)
     {
         if (mb == instance)
         {
@@ -47,7 +47,7 @@ public class SingletonBehaviour<T> : MonoBehaviour where T : MonoBehaviour
 
     // Makes this object a persistent singleton unless the singleton already exists in which case
     // the current object is destroyed
-    protected void MakeMeAPersistenSingleton()
+    protected void MakeMeAPersistentSingleton()
     {
         DontDestroyElseKill(this);
     }
